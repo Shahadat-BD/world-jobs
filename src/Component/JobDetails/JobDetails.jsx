@@ -1,6 +1,7 @@
 import { useLoaderData, useParams } from 'react-router-dom';
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { saveJobApplied } from '../../Utility/LocalStorage';
 
 const JobDetails = () => {
     const jobInfo = useLoaderData()
@@ -11,7 +12,8 @@ const JobDetails = () => {
            salary,job_title,contact_information
     } = jobFind
 
-   const notify = () =>{
+   const handleApplyJob = () =>{
+          saveJobApplied(intId)
           toast('job apply successfully')
    }
 
@@ -40,7 +42,7 @@ const JobDetails = () => {
                      <p className='my-2'> <span className='font-semibold text-lg'> Address :</span> {contact_information.address}</p>
 
                 </div>
-                <button onClick={notify} className='text-white rounded-lg bg-blue-400 w-full py-3 font-semibold'>Apply Now</button>
+                <button onClick={handleApplyJob} className='text-white rounded-lg bg-blue-400 w-full py-3 font-semibold'>Apply Now</button>
                 <ToastContainer></ToastContainer>
             </div>
         </div>
