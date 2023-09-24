@@ -1,10 +1,15 @@
+import { Outlet } from 'react-router-dom'
 import './App.css'
+import Footer from './Component/Footer/Footer'
+import Header from './Component/Header/Header'
 
 function App() {
 
   return (
     <>
-       <h1 className='text-3xl font-bold text-manrope text-center mt-10'>This is world jobs finder website.</h1>
+        <Header></Header>
+           <Outlet></Outlet>
+        <Footer></Footer>
     </>
   )
 }
