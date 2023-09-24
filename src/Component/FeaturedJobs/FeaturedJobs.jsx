@@ -20,12 +20,13 @@ const FeaturedJobs = () => {
            </div>
           <div className='grid lg:grid-cols-2 grid-cols-1 gap-5'>
           {
-            jobs.slice(0,jobLength).map(job=> <Jobs key={job.id} job={job}></Jobs>)
+            jobs.slice(0,jobLength).map(job=> <Jobs key={job.id}  job={job}></Jobs>)
            }
           </div>
           <div className='text-center'>
             {
                jobLength === jobs.length ?
+
                ''
                :
                <button onClick={()=> setJobLength(jobs.length)} className='text-white bg-blue-400 px-5 py-2 rounded-lg my-8'>show all</button>

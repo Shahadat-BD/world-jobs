@@ -1,9 +1,10 @@
 import React from 'react';
 import {CiLocationOn,} from 'react-icons/ci'
 import {AiOutlineDollarCircle} from 'react-icons/ai'
+import { Link } from 'react-router-dom';
 
 const Jobs = ({job}) => {
-    const {logo,job_title,company_name,job_type,location,salary} = job
+    const {logo,job_title,company_name,job_type,location,salary,id} = job
     return (
         <div>
              <div className='border rounded-lg p-8'>
@@ -21,7 +22,9 @@ const Jobs = ({job}) => {
                              <p> {salary}</p>
                         </div>
                     </div>
+                    <Link to={`/job-details/${id}`}>
                     <button className='mt-3 bg-blue-400 font-semibold text-white rounded-md px-5 py-2'>View Details</button>
+                    </Link>
              </div>
         </div>
     );
