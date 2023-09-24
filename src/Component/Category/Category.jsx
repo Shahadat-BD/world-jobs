@@ -1,3 +1,4 @@
+import { key } from 'localforage';
 import React, { useEffect, useState } from 'react';
 
 const Category = () => {
@@ -16,7 +17,8 @@ const Category = () => {
 
            <div className='grid lg:grid-cols-4 grid-cols-1 gap-5'>
               {
-               category.map(category => <div className='bg-blue-50 rounded-md p-8 text-center'>
+               category.map(category => <div key={category.id} className='bg-blue-50 rounded-md p-8 text-center'>
+                     
                    <img className='m-auto' src={category.logo}  />
                    <h1 className='text-xl font-bold my-3'>{category.category_name}</h1>
                    <p>{category.availability}</p>
