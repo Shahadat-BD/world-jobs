@@ -7,8 +7,10 @@ function App() {
 
   return (
     <>
-        <Header></Header>
-           <Outlet></Outlet>
+        <div className='lg:w-[80%] w-[90%] m-auto'>
+            <Header></Header>
+              <Outlet></Outlet>
+        </div>
         <Footer></Footer>
     </>
   )
